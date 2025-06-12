@@ -1,93 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memory-Game</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REVOTYPE</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #93e0f5;
+      margin: 0;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 20px;
+      perspective: 1000px;
+    }
+
+    .card {
+      width: 200px;
+      height: 300px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+      cursor: pointer;
+    }
+
+    .card.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255, 1, 1, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+    }
+
+    /* Carta 1 */
+    .card1 .card-front {
+      background-color: #FDF4A9;
+    }
+
+    .card1 .card-back {
+      background-color: #FDF4A9;
+      transform: rotateY(180deg);
+    }
+
+    /* Carta 2 */
+    .card2 .card-front {
+      background-color: #AAD4F3;
+    }
+
+    .card2 .card-back {
+      background-color: #AAD4F3;
+      transform: rotateY(180deg);
+    }
+
+    /* Carta 3 */
+    .card3 .card-front {
+      background-color: #F3A5B6;
+      color: #000000;
+    }
+
+    .card3 .card-back {
+      background-color: #F3A5B6;
+      color: #000000;
+      transform: rotateY(180deg);
+    }
+  </style>
 </head>
+<body>
 
-<body oncontextmenu="return false;">
-    <div class="board">
-        <div class="card" data-image="img-1">
-            <div class="front">?</div>
-            <img src="Images/img-1.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-1">
-            <div class="front">?</div>
-            <img src="Images/img-1.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-2">
-            <div class="front">?</div>
-            <img src="Images/img-2.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-2">
-            <div class="front">?</div>
-            <img src="Images/img-2.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-3">
-            <div class="front">?</div>
-            <img src="Images/img-3.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-3">
-            <div class="front">?</div>
-            <img src="Images/img-3.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-4">
-            <div class="front">?</div>
-            <img src="Images/img-4.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-4">
-            <div class="front">?</div>
-            <img src="Images/img-4.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-5">
-            <div class="front">?</div>
-            <img src="Images/img-5.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-5">
-            <div class="front">?</div>
-            <img src="Images/img-5.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-6">
-            <div class="front">?</div>
-            <img src="Images/img-6.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-6">
-            <div class="front">?</div>
-            <img src="Images/img-6.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-7">
-            <div class="front">?</div>
-            <img src="Images/img-7.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-7">
-            <div class="front">?</div>
-            <img src="Images/img-7.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-8">
-            <div class="front">?</div>
-            <img src="Images/img-8.png" alt="" class="back">
-        </div>
-        <div class="card" data-image="img-8">
-            <div class="front">?</div>
-            <img src="Images/img-8.png" alt="" class="back">
-        </div>
-    </div>
-    <div class="btn">
-        <div id="refresh">Refresh</div>
-        <div id="level1">Hard</div>
-    </div>
+  <div class="card-container">
+    <div class="card card1">
+      <div class="card-face card-front">TIPOGRAFIA</div>
+      <div class="card-face card-back">RESPUESTA</div>
 
-    <div class="modal2">
-        <div class="modal-content">
-            <span class="close-button2">&times;</span>
-            <h1 id="msg">Congrats!! you have won in </h1>
-        </div>
     </div>
-    <script src="script.js"></script>
+    <div class="card card2">
+      <div class="card-face card-front">GESTAL</div>
+      <div class="card-face card-back">RESPUESTA</div>
+    </div>
+    <div class="card card3">
+      <div class="card-face card-front">PREGUNTA</div>
+      <div class="card-face card-back">RESPUESTA</div>
+    </div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('is-flipped');
+      });
+    });
+  </script>
+
 </body>
-
 </html>
